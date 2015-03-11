@@ -8,4 +8,6 @@
     <string name="textActivity1Welcome">Activity 1</string>
     <string name="btnActivity1">Open Activity 2</string>
     <string name="btnActivity2">Open Activity 3</string>
+    <string name="textActivity2_Welcome">Activity 2</string>
+    <string name="textViewActivity2Content">testo da activity 2</string>
 </resources>

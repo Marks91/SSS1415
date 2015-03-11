@@ -20,4 +20,18 @@
         android:layout_centerHorizontal="true"
         android:gravity="center" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextActivity1"
+        android:layout_below="@+id/buttonActivity2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp"
+        android:background="@color/background_material_dark"
+        android:editable="true"
+        android:enabled="true"
+        android:gravity="left"
+        android:inputType="text"
+        android:textColor="@color/accent_material_dark" />
+
 </RelativeLayout>

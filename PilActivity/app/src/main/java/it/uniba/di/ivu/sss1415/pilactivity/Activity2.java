@@ -7,14 +7,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class Activity2 extends ActionBarActivity {
+    private static final String TEXT_ACTIVITY_1 = "TEXT_ACTIVITY_1";
+    private TextView textViewActivity2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity2);
+        textViewActivity2 = (TextView) findViewById(R.id.textViewActivity2);
+        Intent intent = getIntent();
+        textViewActivity2.setText(intent.getStringExtra(TEXT_ACTIVITY_1));
 
         Button btnActivity2Obj=(Button)findViewById(R.id.buttonActivity3);
         btnActivity2Obj.setOnClickListener(new View.OnClickListener() {
@@ -26,7 +33,9 @@ public class Activity2 extends ActionBarActivity {
                 startActivity(openActivity3);
             }
         });
-
+        if (savedInstanceState != null) {
+            textViewActivity2.setText(savedInstanceState.getString(TEXT_ACTIVITY_1));
+        }
     }
 
 

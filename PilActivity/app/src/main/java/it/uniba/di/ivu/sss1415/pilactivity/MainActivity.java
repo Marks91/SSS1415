@@ -7,21 +7,30 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
-
+import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
+    private static final String TEXT_ACTIVITY_1 = "TEXT_ACTIVITY_1";
+    private EditText editTextActivity1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btnHome=(Button)findViewById(R.id.buttonActivity2);
+        editTextActivity1 = (EditText) findViewById(R.id.editTextActivity1);
+        Button btnHome = (Button) findViewById(R.id.buttonActivity2);
+
+        if (savedInstanceState != null){
+            editTextActivity1.setText(savedInstanceState.getString(TEXT_ACTIVITY_1));
+        }
+
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //prima definisco l'intenzione di aprire un'altra activity
                 Intent openActivity2 = new Intent(MainActivity.this, Activity2.class);
+                openActivity2.putExtra(TEXT_ACTIVITY_1, editTextActivity1.getText().toString());
                 //faccio partire l'Intent
                 startActivity(openActivity2);
             }
@@ -29,6 +38,12 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    //salva i valori del totale e della percentuale attuale
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+        outState.putString(TEXT_ACTIVITY_1, editTextActivity1.toString());
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
