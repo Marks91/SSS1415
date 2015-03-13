@@ -30,7 +30,10 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 //prima definisco l'intenzione di aprire un'altra activity
                 Intent openActivity2 = new Intent(MainActivity.this, Activity2.class);
+
+                //passo il valore di editTextActivity1 all'Activity2 identificata dall'Intent
                 openActivity2.putExtra(TEXT_ACTIVITY_1, editTextActivity1.getText().toString());
+
                 //faccio partire l'Intent
                 startActivity(openActivity2);
             }
@@ -40,9 +43,9 @@ public class MainActivity extends ActionBarActivity {
 
     //salva i valori del totale e della percentuale attuale
     @Override
-    protected void onSaveInstanceState(Bundle outState){
-        super.onSaveInstanceState(outState);
-        outState.putString(TEXT_ACTIVITY_1, editTextActivity1.toString());
+    protected void onSaveInstanceState(Bundle statoDaSalvare){
+        super.onSaveInstanceState(statoDaSalvare);
+        statoDaSalvare.putString(TEXT_ACTIVITY_1, editTextActivity1.toString());
     }
 
     @Override

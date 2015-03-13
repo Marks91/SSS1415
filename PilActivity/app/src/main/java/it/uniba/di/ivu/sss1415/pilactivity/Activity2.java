@@ -16,26 +16,30 @@ public class Activity2 extends ActionBarActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle statoSalvato) {
+        super.onCreate(statoSalvato);
         setContentView(R.layout.activity_activity2);
         textViewActivity2 = (TextView) findViewById(R.id.textViewActivity2);
         Intent intent = getIntent();
         textViewActivity2.setText(intent.getStringExtra(TEXT_ACTIVITY_1));
 
+        //recupero informazioni salvate in precedenza
+        if (statoSalvato != null) {
+            textViewActivity2.setText(statoSalvato.getString(TEXT_ACTIVITY_1));
+        }
+
         Button btnActivity2Obj=(Button)findViewById(R.id.buttonActivity3);
         btnActivity2Obj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //prima definisco l'intenzione di aprire un'altra activity
+
+                //prima si definisce l'intenzione di aprire un'altra activity
                 Intent openActivity3 = new Intent(Activity2.this, Activity3.class);
-                //faccio partire l'Intent
+
+                //poi si fa partire quella activity attraverso l'intent
                 startActivity(openActivity3);
             }
         });
-        if (savedInstanceState != null) {
-            textViewActivity2.setText(savedInstanceState.getString(TEXT_ACTIVITY_1));
-        }
     }
 
 
