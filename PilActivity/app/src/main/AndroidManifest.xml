@@ -24,5 +24,4 @@
             android:label="@string/title_activity_activity3" >
         </activity>
     </application>
-
 </manifest>

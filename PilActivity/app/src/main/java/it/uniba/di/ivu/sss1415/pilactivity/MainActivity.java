@@ -17,7 +17,9 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
         editTextActivity1 = (EditText) findViewById(R.id.editTextActivity1);
         Button btnHome = (Button) findViewById(R.id.buttonActivity2);
 
@@ -28,6 +30,7 @@ public class MainActivity extends ActionBarActivity {
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 //prima definisco l'intenzione di aprire un'altra activity
                 Intent apriActivity2 = new Intent(MainActivity.this, Activity2.class);
 
