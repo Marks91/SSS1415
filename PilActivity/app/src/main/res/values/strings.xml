@@ -10,4 +10,6 @@
     <string name="btnActivity2">Open Activity 3</string>
     <string name="textActivity2_Welcome">Activity 2</string>
     <string name="textViewActivity2Content">testo da activity 2</string>
+    <string name="bye">Good bye</string>
+    <string name="title_activity_scorro">scorroActivity</string>
 </resources>

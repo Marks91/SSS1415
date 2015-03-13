@@ -50,6 +50,13 @@ public class Activity2 extends ActionBarActivity {
         return true;
     }
 
+    //salva i valori del totale e della percentuale attuale
+    @Override
+    protected void onSaveInstanceState(Bundle statoDaSalvare){
+        super.onSaveInstanceState(statoDaSalvare);
+        statoDaSalvare.putString(TEXT_ACTIVITY_1, textViewActivity2.getText().toString());
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

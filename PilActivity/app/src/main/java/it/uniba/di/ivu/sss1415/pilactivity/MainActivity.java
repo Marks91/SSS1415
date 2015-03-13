@@ -29,13 +29,13 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 //prima definisco l'intenzione di aprire un'altra activity
-                Intent openActivity2 = new Intent(MainActivity.this, Activity2.class);
+                Intent apriActivity2 = new Intent(MainActivity.this, Activity2.class);
 
                 //passo il valore di editTextActivity1 all'Activity2 identificata dall'Intent
-                openActivity2.putExtra(TEXT_ACTIVITY_1, editTextActivity1.getText().toString());
+                apriActivity2.putExtra(TEXT_ACTIVITY_1, editTextActivity1.getText().toString());
 
                 //faccio partire l'Intent
-                startActivity(openActivity2);
+                startActivity(apriActivity2);
             }
         });
 
